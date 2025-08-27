@@ -1,0 +1,35 @@
+{
+  "name": "nextjs-nextauth-mongo-users",
+  "private": true,
+  "version": "2.0.1",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "next-auth": "4.24.11",
+    "bcryptjs": "2.4.3",
+    "zod": "3.23.8",
+    "lucide-react": "0.441.0",
+    "sonner": "1.5.0",
+    "next-themes": "0.3.0",
+    "clsx": "2.1.1",
+    "mongodb": "6.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.9",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.18",
+    "postcss": "8.4.38",
+    "tailwindcss": "3.4.6",
+    "typescript": "5.5.4",
+    "eslint": "8.57.0",
+    "eslint-config-next": "15.0.0"
+  }
+}

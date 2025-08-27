@@ -1,0 +1,48 @@
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store
+
+# Next.js
+.next
+out
+dist
+
+# Production
+build
+.vercel
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE / Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*.swn
+*.swm
+
+# Mac / System
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+# Misc
+*.tgz
