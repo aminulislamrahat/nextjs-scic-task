@@ -1,8 +1,16 @@
 # nextjs-scic-task
 
+---
+
+## 🚀 Live Demo
+
+- **Frontend:** [https://nextjs-scic-task.vercel.app/]
+
+---
+
 # Next.js 15 + NextAuth v4 + MongoDB (Users + Products)
 
-- Credentials auth only (no Google)
+- Credentials auth only
 - **User signup** persists to MongoDB
 - **Login** authenticates against MongoDB
 - Products stored in MongoDB
