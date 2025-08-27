@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         const email = credentials?.email as string;
@@ -20,8 +20,8 @@ export const authOptions: NextAuthOptions = {
         const ok = bcrypt.compareSync(password, user.passwordHash);
         if (!ok) return null;
         return { id: user._id?.toString(), name: user.name, email: user.email };
-      }
-    })
+      },
+    }),
   ],
   pages: { signIn: "/login" },
   session: { strategy: "jwt" },
@@ -32,9 +32,10 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      if (session.user && token?.id) (session.user as any).id = token.id as string;
+      if (session.user && token?.id)
+        (session.user as any).id = token.id as string;
       return session;
-    }
-  }
+    },
+  },
 };
 export default NextAuth(authOptions);

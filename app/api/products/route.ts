@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAllProducts, addProduct } from "@/lib/productsStore";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import type { Session } from "next-auth";
+import type { Session } from "next-auth"; // <-- import the Session type
 import { z } from "zod";
 
 export async function GET() {
@@ -17,14 +17,16 @@ const schema = z.object({
 });
 
 export async function POST(req: NextRequest) {
-  const session: Session | null = await getServerSession(authOptions);
-  if (!session?.user)
+  const session: Session | null = await getServerSession(authOptions); // <-- explicit typing
+  if (!session || !session.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const json = await req.json();
   const parsed = schema.safeParse(json);
-  if (!parsed.success)
+  if (!parsed.success) {
     return NextResponse.json({ error: "Invalid input" }, { status: 400 });
+  }
 
   const created = await addProduct(parsed.data);
   return NextResponse.json(created, { status: 201 });
